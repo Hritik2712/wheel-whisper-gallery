@@ -4,7 +4,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } f
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Car } from '../data/cars';
 import ZoomableImage from './ZoomableImage';
-import { Gallery as GalleryIcon, Car as CarIcon } from 'lucide-react';
+import { Image, Car as CarIcon } from 'lucide-react';
 
 interface CarDetailModalProps {
   car: Car | null;
@@ -34,7 +34,7 @@ const CarDetailModal: React.FC<CarDetailModalProps> = ({
         <Tabs defaultValue="gallery" className="mt-6">
           <TabsList className="grid w-full grid-cols-2 mb-8">
             <TabsTrigger value="gallery" className="flex items-center">
-              <GalleryIcon className="w-4 h-4 mr-2" />
+              <Image className="w-4 h-4 mr-2" />
               Gallery
             </TabsTrigger>
             <TabsTrigger value="specs" className="flex items-center">
