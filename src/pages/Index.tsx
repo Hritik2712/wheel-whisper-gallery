@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Hero from '@/components/Hero';
 import CarCollection from '@/components/CarCollection';
 import { cars } from '@/data/cars';
+import { Button } from '@/components/ui/button';
 
 const Index: React.FC = () => {
   const [featuredCar, setFeaturedCar] = useState(cars[0]);
@@ -31,7 +32,7 @@ const Index: React.FC = () => {
             <a href="#" className="text-white/90 hover:text-white transition-colors">About</a>
             <a href="#" className="text-white/90 hover:text-white transition-colors">Contact</a>
           </nav>
-          <button className="btn-primary hidden md:block">Join Waitlist</button>
+          <Button className="hidden md:flex bg-car-accent hover:bg-car-accent/90 text-white">Join Waitlist</Button>
         </div>
       </header>
       
@@ -79,9 +80,9 @@ const Index: React.FC = () => {
                   placeholder="Your email" 
                   className="px-4 py-2 rounded-l-md bg-white/10 text-white border-none focus:outline-none flex-1"
                 />
-                <button className="bg-car-accent text-white px-4 py-2 rounded-r-md hover:bg-blue-600 transition-colors">
+                <Button className="rounded-l-none bg-car-accent hover:bg-car-accent/90 text-white">
                   Subscribe
-                </button>
+                </Button>
               </div>
             </div>
           </div>

@@ -2,6 +2,7 @@
 import React from 'react';
 import { Car } from '../data/cars';
 import { ArrowRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 interface HeroProps {
   featuredCar: Car;
@@ -52,13 +53,13 @@ const Hero: React.FC<HeroProps> = ({ featuredCar, onViewCollection }) => {
             </p>
             
             <div className="mt-6 flex flex-col sm:flex-row gap-4">
-              <button
+              <Button
                 onClick={onViewCollection}
-                className="btn-primary flex items-center justify-center sm:justify-start gap-2"
+                className="bg-car-accent hover:bg-car-accent/90 text-white flex items-center justify-center sm:justify-start gap-2"
               >
                 View Collection
                 <ArrowRight size={16} />
-              </button>
+              </Button>
             </div>
           </div>
         </div>

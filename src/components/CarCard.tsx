@@ -2,6 +2,7 @@
 import React from 'react';
 import type { Car } from '../data/cars';
 import { Car as CarIcon } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 interface CarCardProps {
   car: Car;
@@ -19,6 +20,7 @@ const CarCard: React.FC<CarCardProps> = ({ car, onClick }) => {
           src={car.images[0]} 
           alt={`${car.brand} ${car.name}`} 
           className="car-image"
+          loading="lazy"
         />
         {car.badge && (
           <span className="car-badge">
@@ -44,8 +46,10 @@ const CarCard: React.FC<CarCardProps> = ({ car, onClick }) => {
             {car.category.charAt(0).toUpperCase() + car.category.slice(1)}
           </span>
           
-          <button 
-            className="flex items-center text-car-accent text-sm font-medium"
+          <Button
+            variant="ghost" 
+            size="sm"
+            className="text-car-accent hover:bg-car-accent/10 hover:text-car-accent"
             onClick={(e) => {
               e.stopPropagation();
               onClick();
@@ -53,7 +57,7 @@ const CarCard: React.FC<CarCardProps> = ({ car, onClick }) => {
           >
             <CarIcon size={16} className="mr-1" />
             View Details
-          </button>
+          </Button>
         </div>
       </div>
     </div>

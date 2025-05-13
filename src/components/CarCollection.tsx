@@ -4,6 +4,7 @@ import { cars } from '../data/cars';
 import CarCard from './CarCard';
 import CarDetailModal from './CarDetailModal';
 import FilterBar from './FilterBar';
+import { Button } from '@/components/ui/button';
 
 const CarCollection: React.FC = () => {
   const [selectedCar, setSelectedCar] = useState(null);
@@ -66,15 +67,16 @@ const CarCollection: React.FC = () => {
         <div className="text-center py-16">
           <h3 className="text-xl font-medium text-gray-500">No cars found matching your criteria</h3>
           <p className="mt-2 text-gray-400">Try adjusting your filters or search terms</p>
-          <button 
-            className="mt-6 btn-outline"
+          <Button 
+            variant="outline" 
+            className="mt-6"
             onClick={() => {
               setSelectedCategory('all');
               setSearchQuery('');
             }}
           >
             Reset Filters
-          </button>
+          </Button>
         </div>
       )}
       

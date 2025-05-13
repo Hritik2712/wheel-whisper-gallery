@@ -5,6 +5,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Car } from '../data/cars';
 import ZoomableImage from './ZoomableImage';
 import { Image, Car as CarIcon } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 interface CarDetailModalProps {
   car: Car | null;
@@ -74,13 +75,13 @@ const CarDetailModal: React.FC<CarDetailModalProps> = ({
           </TabsContent>
         </Tabs>
         
-        <div className="flex justify-end gap-4 mt-6">
-          <button className="btn-outline">
+        <div className="flex flex-wrap justify-end gap-4 mt-6">
+          <Button variant="outline" className="border-car-accent text-car-accent hover:bg-car-accent/10">
             Schedule Test Drive
-          </button>
-          <button className="btn-primary">
+          </Button>
+          <Button className="bg-car-accent hover:bg-car-accent/90 text-white">
             Inquire About This Car
-          </button>
+          </Button>
         </div>
       </DialogContent>
     </Dialog>
